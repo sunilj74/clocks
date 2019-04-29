@@ -1,0 +1,16 @@
+<mat-card>
+  <div>
+    <span>
+      <img [src]="flag">
+    </span>
+    <span class='countrytitle'>{{city}}</span>
+  </div>
+  <mat-card-content>
+    <div style="font-size: 40px">
+    <clock-face-digital *ngIf='isDigital; else analogclock' [currentTime]="currentTime" [timezone]="timezone"></clock-face-digital>
+    <ng-template #analogclock>
+      <clock-face-analog [currentTime]="currentTime" [timezone]="timezone"></clock-face-analog>
+    </ng-template>
+    </div>
+  </mat-card-content>
+</mat-card>
