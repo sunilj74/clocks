@@ -6,16 +6,34 @@ import { TZMASTER } from './timezonedata';
 })
 export class TimezoneService {
 
+
   constructor() { }
 
   getTimeZones(){
-    let data = TZMASTER.filter(p=>p.tz != 'Deprecated' && p.tz != 'Alias');
+    let data = [];
+    let userZones = this.getUserTimeZones();
+    if(userZones!=null && userZones.length>0){
+      data = TZMASTER
+              .filter(p => userZones
+                .find(q => q == p.tz) != null);
+    }
+
     return data;
   }
 
   getSettings(){
     return {
-      isDigital: false
+      isDigital: true
     };
+  }
+
+  getUserTimeZones(){
+    let userZones = null;
+    if(userZones==null){
+      let intlx = new Intl.DateTimeFormat();
+      let optionsx = intlx.resolvedOptions();
+      userZones = [optionsx.timeZone];
+    }
+    return userZones;
   }
 }

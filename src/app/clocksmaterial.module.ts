@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
     imports: [
@@ -10,14 +13,20 @@ import { MatGridListModule } from '@angular/material/grid-list';
         MatCheckboxModule,
         MatToolbarModule,
         MatCardModule,
-        MatGridListModule
+        MatGridListModule,
+        MatButtonModule,
+        MatIconModule,
+        MatMenuModule
     ],
     exports: [
         MatButtonModule,
         MatCheckboxModule,
         MatCardModule,
         MatToolbarModule,
-        MatGridListModule
+        MatGridListModule,
+        MatButtonModule,
+        MatIconModule,
+        MatMenuModule
     ]
 })
 export class ClocksMaterialModule {

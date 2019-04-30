@@ -1,16 +1,26 @@
-<mat-card>
-  <div>
-    <span>
-      <img [src]="flag">
-    </span>
-    <span class='countrytitle'>{{city}}</span>
-  </div>
-  <mat-card-content>
-    <div style="font-size: 40px">
-    <clock-face-digital *ngIf='isDigital; else analogclock' [currentTime]="currentTime" [timezone]="timezone"></clock-face-digital>
-    <ng-template #analogclock>
-      <clock-face-analog [currentTime]="currentTime" [timezone]="timezone"></clock-face-analog>
-    </ng-template>
+<mat-card class="clock-card">
+  <mat-card-content class="clock-content">
+    <div>
+      <clock-face-digital *ngIf='isDigital; else analogclock' [currentTime]="currentTime" [timezone]="timezone"></clock-face-digital>
+      <ng-template #analogclock>
+        <clock-face-analog [currentTime]="currentTime" [timezone]="timezone"></clock-face-analog>
+      </ng-template>
     </div>
   </mat-card-content>
+  <mat-toolbar class="clock-toolbar">
+    <mat-toolbar-row class="clock-toolbar-row">
+      <img class="clock-flag" [src]="flag">
+      <div class='clock-title'>{{city}}</div>
+      <span class="clock-toolbar-spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>delete_forever</mat-icon>
+          <span>Remove</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
 </mat-card>

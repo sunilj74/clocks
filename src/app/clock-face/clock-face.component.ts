@@ -27,7 +27,7 @@ export class ClockFaceComponent implements OnInit {
         cityName = cityName.replace("_", " ");
         this.city = cityName;
       }
-      this.flag = `https://www.countryflags.io/${this.timezone.country}/flat/64.png`;
+      this.flag = `https://www.countryflags.io/${this.timezone.country}/flat/24.png`;
     }
   }
 

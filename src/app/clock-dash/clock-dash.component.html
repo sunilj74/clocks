@@ -1,6 +1,6 @@
-<mat-grid-list cols="3" rowHeight="200">
+<mat-grid-list [cols]="cols" rowHeight="200">
   <mat-grid-tile *ngFor='let tz of timeZones'>
-    <clock-face [timezone]='tz' [currentTime]="currentTime"></clock-face>
+    <clock-face [timezone]='tz' [currentTime]="currentTime" [isDigital]="appSettings?.isDigital"></clock-face>
   </mat-grid-tile>
 </mat-grid-list>
 

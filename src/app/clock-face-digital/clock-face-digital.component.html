@@ -1,3 +1,6 @@
-<p>
-  clock-face-digital works!
-</p>
+<div>
+  {{currentTime | date: 'hh:mm:ss' : timezone.offset}} 
+  <span class="ampm">
+    {{currentTime | date: 'aa' : timezone.offset}} 
+  </span>
+</div>

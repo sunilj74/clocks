@@ -13,13 +13,23 @@ export class ClockDashComponent implements OnInit {
   }
 
   timeZones: any[];
+  cols: number = 1;
   appSettings: any;
   currentTime: Date = new Date();
 
   ngOnInit() {
     this.appSettings = this.tzService.getSettings();
     this.timeZones = this.tzService.getTimeZones();
+    let count = this.timeZones.length;
+    if(count > 2){
+      this.cols = 3;
+    }
+    else if(count > 0){
+      this.cols = count;
+    }
   }
+
+
 
   tickTock() {
     this.currentTime = new Date();
