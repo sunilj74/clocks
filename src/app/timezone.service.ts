@@ -23,17 +23,20 @@ export class TimezoneService {
 
   getSettings(){
     return {
-      isDigital: true
+      isDigital: false
     };
   }
 
   getUserTimeZones(){
-    let userZones = null;
-    if(userZones==null){
-      let intlx = new Intl.DateTimeFormat();
-      let optionsx = intlx.resolvedOptions();
-      userZones = [optionsx.timeZone];
-    }
+    let userZones = [];
+    userZones = TZMASTER
+        .slice(0, 6)
+        .map(p=>p.tz);
+
+        let intlx = new Intl.DateTimeFormat();
+    let optionsx = intlx.resolvedOptions();
+    userZones.push(optionsx.timeZone);
+
     return userZones;
   }
 }

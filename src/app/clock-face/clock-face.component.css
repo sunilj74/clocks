@@ -1,39 +1,7 @@
-.clock-toolbar {
-    background-color: transparent;
-}
-
-.clock-toolbar-row {
-    padding: 0px;
-    padding-top: 20px;
-    padding-left: 20px;
-}
-
-.clock-toolbar-spacer {
-    flex: 1 1 auto;
+.card-label {
+    padding: 15px;
 }
 
 .clock-card {
-    padding: 0px;
-}
-
-.clock-content {
-    font-size: 40px;
-    padding: 30px 30px 0px 30px;
-}
-
-.country {
-    vertical-align: middle;
-    padding-top: 10px;
-}
-
-.clock-title {
-    display: inline;
-    font-size: 14px;
-    vertical-align: middle;
-    margin-left: 10px;
-}
-
-.clock-flag {
-    display: inline;
-    vertical-align: middle;
+    display: inline-block;
 }

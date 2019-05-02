@@ -6,6 +6,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import { MatMenuModule } from '@angular/material/menu';
         MatGridListModule,
         MatButtonModule,
         MatIconModule,
-        MatMenuModule
+        MatMenuModule,
+        FlexLayoutModule
     ],
     exports: [
         MatButtonModule,
@@ -26,7 +28,8 @@ import { MatMenuModule } from '@angular/material/menu';
         MatGridListModule,
         MatButtonModule,
         MatIconModule,
-        MatMenuModule
+        MatMenuModule,
+        FlexLayoutModule
     ]
 })
 export class ClocksMaterialModule {

@@ -30,5 +30,4 @@ export class ClockFaceComponent implements OnInit {
       this.flag = `https://www.countryflags.io/${this.timezone.country}/flat/24.png`;
     }
   }
-
 }

@@ -3,3 +3,8 @@
     color: darkgrey;
     font-weight: bold;
 }
+
+.clock-face-digital-content {
+    font-size: 40px;
+    padding: 30px 30px 30px 30px;
+}
