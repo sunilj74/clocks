@@ -1,4 +1,6 @@
-export const TZMASTER = 
+import { ITimeZone } from '../store/models/itimezone';
+
+export const TZMASTER: ITimeZone[] = 
   [
     {
       "country": "CI",

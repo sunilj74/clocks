@@ -1,0 +1,26 @@
+.card-label {
+    padding: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.clock-card {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
+.clock-card .delete {
+    display: none;
+}
+
+.clock-card:hover .delete {
+    display: block;
+}
+
+.hang-top-right {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+}

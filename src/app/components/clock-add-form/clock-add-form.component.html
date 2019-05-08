@@ -1,0 +1,13 @@
+<mat-form-field appearance="standard">
+  <mat-label>City/Timezone</mat-label>
+  <input matInput placeholder="city time zone" [matAutocomplete]="auto" [formControl]="tzName">
+  <button matSuffix mat-icon-button class="secondary" (click)="addTimeZone()">
+    <i class="material-icons">add_circle</i>
+  </button>
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    <mat-option *ngFor="let city of filteredCities | async" [value]="city">
+      {{city}}
+    </mat-option>
+  </mat-autocomplete>
+  <mat-hint>Enter part of city or timezone name and select from the list</mat-hint>
+</mat-form-field>

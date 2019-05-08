@@ -1,0 +1,22 @@
+<div class="clock-setup-action">
+  <button mat-fab color="primary" (click)="toggleOptions()" >
+    <i class="material-icons" [@zoomer]="{value: zoomer}">settings</i>
+  </button>
+  <div *ngIf="showOptions" class="clock-setup-layout" [@stagger]="buttons">
+    <button mat-mini-fab class="fab-secondary" color="secondary">
+      <i class="material-icons">info</i>
+    </button>
+    <button mat-mini-fab class="fab-secondary" color="secondary" (click)="showAddModal()">
+      <i class="material-icons">note_add</i>
+    </button>
+    <button mat-mini-fab class="fab-secondary" color="secondary" [disabled]="config?.zoomLevel==config?.maxZoomLevel" (click)="zoomIn()">
+      <i class="material-icons">zoom_in</i>
+    </button>
+    <button mat-mini-fab class="fab-secondary" color="secondary" [disabled]="config?.zoomLevel==1" (click)="zoomOut()">
+      <i class="material-icons">zoom_out</i>
+    </button>
+    <button mat-mini-fab class="fab-secondary" color="secondary" (click)="toggleIsDigital()">
+      <i class="material-icons">{{config?.isDigital?'access_time':'looks_two'}}</i>
+    </button>
+  </div>
+</div>

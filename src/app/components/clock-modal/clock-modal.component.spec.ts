@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClockFaceComponent } from './clock-face.component';
+import { ClockModalComponent } from './clock-modal.component';
 
-describe('ClockFaceComponent', () => {
-  let component: ClockFaceComponent;
-  let fixture: ComponentFixture<ClockFaceComponent>;
+describe('ClockModalComponent', () => {
+  let component: ClockModalComponent;
+  let fixture: ComponentFixture<ClockModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClockFaceComponent ]
+      declarations: [ ClockModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ClockFaceComponent);
+    fixture = TestBed.createComponent(ClockModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

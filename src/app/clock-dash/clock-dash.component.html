@@ -1,5 +1,0 @@
-<div class="clock-dash" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="20px" fxLayoutAlign="center">
-  <div fxFlex="30%" class="clock-box" *ngFor='let tz of timeZones'>
-    <clock-face [timezone]='tz' [currentTime]="currentTime" [isDigital]="appSettings?.isDigital"></clock-face>
-  </div>
-</div>

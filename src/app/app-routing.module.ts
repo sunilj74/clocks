@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ClockDashComponent } from './clock-dash/clock-dash.component';
+import { ClockDashComponent } from './components/clock-dash/clock-dash.component';
 
 
 const routes: Routes = [

@@ -1,0 +1,11 @@
+<ng-container *ngIf="config$ | async as config; else loading">
+  <div class="clock-dash" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="20px" fxLayoutAlign="center">
+    <div [fxFlex]="flexWidth" class="clock-box" *ngFor='let tz of timeZones'>
+      <clock-face [timezone]='tz' [currentTime]="currentTime" [isDigital]="config.isDigital"></clock-face>
+    </div>
+  </div>
+  <clock-setup [config]="config"></clock-setup>
+</ng-container>
+<ng-template #loading>
+  <h1>Loading....</h1>
+</ng-template>
