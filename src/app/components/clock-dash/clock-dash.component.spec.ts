@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ClocksMaterialModule } from "../../clocksmaterial.module";
 
 import { ClockDashComponent } from './clock-dash.component';
 import { ClockFaceComponent } from '../clock-face/clock-face.component';
@@ -14,6 +15,9 @@ describe('ClockDashComponent', () => {
         ClockDashComponent, 
         ClockFaceComponent,
         ClockSetupComponent
+      ],
+      imports: [
+        ClocksMaterialModule
       ]
     })
     .compileComponents();

@@ -30,6 +30,9 @@ export class TimezoneService {
     if(myClocks!==null){
       config = JSON.parse(myClocks) as IConfig;
     }
+    if(config.myZones==null){
+      config.myZones=[];
+    }
     if(!config.myZones.find(p=>p===currentTimezone)){
       config = {
         ...config,

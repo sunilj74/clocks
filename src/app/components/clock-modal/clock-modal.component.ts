@@ -17,8 +17,7 @@ export class ClockModalComponent implements OnInit {
   ngOnInit() {
   }
 
-  closeModal(event) {
-    console.log("Event", event);
+  closeModal() {
     this.modalRef.close();
   }
 

@@ -1,4 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from "@angular/forms";
+import { StoreModule } from "@ngrx/store";
+import { ClocksMaterialModule } from "../../clocksmaterial.module";
+
 
 import { ClockAddFormComponent } from './clock-add-form.component';
 
@@ -8,7 +12,12 @@ describe('ClockAddFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClockAddFormComponent ]
+      declarations: [ ClockAddFormComponent ],
+      imports: [
+        ClocksMaterialModule,
+        ReactiveFormsModule,
+        StoreModule
+      ]
     })
     .compileComponents();
   }));
