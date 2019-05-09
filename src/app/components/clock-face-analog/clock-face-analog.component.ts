@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ["./clock-face-analog.component.css"]
 })
 export class ClockFaceAnalogComponent implements OnInit {
-  @Input() currentTime: Date;
+  @Input() currentTime: Date = new Date();
   @Input() timezone: any;
   analogStyle: any;
   config$: Observable<IConfig>;
@@ -53,6 +53,9 @@ export class ClockFaceAnalogComponent implements OnInit {
   }
 
   computeAngle() {
+    if(this.timezone==null){
+      return;
+    }
     let timeAtZone = new Date(
       this.currentTime.toLocaleString("en-US", { timeZone: this.timezone.tz })
     );

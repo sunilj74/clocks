@@ -1,6 +1,6 @@
 <div [ngStyle]="digitalStyle">
-  {{currentTime | date: 'hh:mm:ss' : timezone.offset}} 
+  {{currentTime | date: 'hh:mm:ss' : timezone?.offset}} 
   <span class="ampm">
-    {{currentTime | date: 'aa' : timezone.offset}} 
+    {{currentTime | date: 'aa' : timezone?.offset}} 
   </span>
 </div>

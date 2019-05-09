@@ -12,7 +12,7 @@ import { RemoveClock } from 'src/app/store/actions/clock.actions';
 export class ClockFaceComponent implements OnInit {
   @Input() isDigital: boolean;
   @Input() timezone: any;
-  @Input() currentTime: Date;
+  @Input() currentTime: Date = new Date();
 
   config$: Observable<IConfig>;
 
@@ -27,7 +27,7 @@ export class ClockFaceComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges){
-    if(changes!=null&&changes['timezone']!=null){
+    if(changes!=null&&changes['timezone']!=null&&this.timezone!=null){
       let cityName = this.timezone.tz;
       if(cityName!=""){
         let cityParts = cityName.split('/');
@@ -40,6 +40,8 @@ export class ClockFaceComponent implements OnInit {
   }
 
   removeClock(){
-    this.store.dispatch(new RemoveClock(this.timezone.tz));
+    if(this.timezone!=null){
+      this.store.dispatch(new RemoveClock(this.timezone.tz));
+    }
   }
 }

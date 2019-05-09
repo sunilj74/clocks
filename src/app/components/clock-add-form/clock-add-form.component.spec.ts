@@ -1,8 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from "@angular/forms";
-import { StoreModule } from "@ngrx/store";
 import { ClocksMaterialModule } from "../../clocksmaterial.module";
-
+import { StoreModule } from "@ngrx/store";
+import { configReducers } from '../../store/reducers/config.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { ClockEffects } from '../../store/effects/clock.effects';
 
 import { ClockAddFormComponent } from './clock-add-form.component';
 
@@ -16,7 +18,12 @@ describe('ClockAddFormComponent', () => {
       imports: [
         ClocksMaterialModule,
         ReactiveFormsModule,
-        StoreModule
+        StoreModule.forRoot({
+          config: configReducers
+        }),
+        EffectsModule.forRoot([
+          ClockEffects
+        ])
       ]
     })
     .compileComponents();

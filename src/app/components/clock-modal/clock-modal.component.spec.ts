@@ -1,6 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+
 import { ClockModalComponent } from './clock-modal.component';
+import { ClockAddFormComponent } from '../clock-add-form/clock-add-form.component';
+import { ClocksMaterialModule } from 'src/app/clocksmaterial.module';
+import { StoreModule } from "@ngrx/store";
+import { configReducers } from "../../store/reducers/config.reducer";
+import { EffectsModule } from "@ngrx/effects";
+import { ClockEffects } from "../../store/effects/clock.effects";
 
 describe('ClockModalComponent', () => {
   let component: ClockModalComponent;
@@ -8,9 +17,27 @@ describe('ClockModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClockModalComponent ]
-    })
-    .compileComponents();
+      declarations: [ClockModalComponent, ClockAddFormComponent],
+      imports: [
+        ReactiveFormsModule,
+        ClocksMaterialModule,
+        ReactiveFormsModule,
+        StoreModule.forRoot({
+          config: configReducers
+        }),
+        EffectsModule.forRoot([ClockEffects])
+      ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        {
+          provide: MAT_DIALOG_DATA,
+          useValue: {}
+        }
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

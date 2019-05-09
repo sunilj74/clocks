@@ -1,4 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ClocksMaterialModule } from "../../clocksmaterial.module";
+import { StoreModule } from "@ngrx/store";
+import { configReducers } from "../../store/reducers/config.reducer";
+import { EffectsModule } from "@ngrx/effects";
+import { ClockEffects } from "../../store/effects/clock.effects";
 
 import { ClockSetupComponent } from './clock-setup.component';
 
@@ -8,7 +13,16 @@ describe('ClockSetupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClockSetupComponent ]
+      declarations: [ClockSetupComponent],
+      imports: [
+        ClocksMaterialModule,
+        StoreModule.forRoot({
+          config: configReducers
+        }),
+        EffectsModule.forRoot([
+          ClockEffects
+        ])
+      ]
     })
     .compileComponents();
   }));
