@@ -1,12 +1,20 @@
 import { Actions, Effect, ofType} from '@ngrx/effects';
 import { TimezoneService } from 'src/app/services/timezone.service';
-import { ActionTypes, LoadConfigSuccess } from '../actions/clock.actions';
-import { mergeMap, map } from 'rxjs/operators';
+import { ActionTypes, LoadConfigSuccess, SaveConfigSuccess } from '../actions/clock.actions';
+import { mergeMap, map, withLatestFrom, switchMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
+import { IConfig } from '../models/iconfig';
+import { Store } from '@ngrx/store';
+import { EMPTY } from 'rxjs';
 
 @Injectable()
 export class  ClockEffects {
-    constructor(private actions$: Actions, private tzService: TimezoneService) {
+    constructor(
+        private actions$: Actions, 
+        private tzService: TimezoneService, 
+        private store$: Store<IConfig>
+    ) 
+    {
     }
 
     @Effect() loadConfig$ = this.actions$
@@ -20,5 +28,28 @@ export class  ClockEffects {
                         })
                     )
                 })
+            );
+
+    @Effect() saveConfig$ = this.actions$
+            .pipe(
+                ofType(
+                    ActionTypes.AddClock, 
+                    ActionTypes.RemoveClock, 
+                    ActionTypes.ToggleDigital, 
+                    ActionTypes.ZoomIn, 
+                    ActionTypes.ZoomOut
+                ),
+                withLatestFrom(this.store$.select('config')),
+                mergeMap(([action, config])=>{
+                    return this.tzService.updateConfig(config)
+                    .pipe(
+                        map(config => {
+                            return new SaveConfigSuccess(config);
+                        })
+                    );
+                })
+
+
+
             );
 }

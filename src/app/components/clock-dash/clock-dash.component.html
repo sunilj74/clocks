@@ -3,8 +3,8 @@
     <div [fxFlex]="flexWidth" class="clock-box" *ngFor='let tz of timeZones'>
       <clock-face [timezone]='tz' [currentTime]="currentTime" [isDigital]="config.isDigital"></clock-face>
     </div>
-  </div>
   <clock-setup [config]="config"></clock-setup>
+  </div>
 </ng-container>
 <ng-template #loading>
   <h1>Loading....</h1>

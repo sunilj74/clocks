@@ -25,7 +25,7 @@ export class ClockDashComponent implements OnInit {
     this.config$.subscribe(p=>{
       this.timeZones = this.tzService.getTimeZoneData(p.myZones);
       let count = this.timeZones.length;
-      if (count % 2 == 0) {
+      if (count % 2 == 0 && count % 3 != 0) {
         this.flexWidth = "40%";
       }
       else if (count > 0) {

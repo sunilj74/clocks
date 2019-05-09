@@ -1,4 +1,8 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { IConfig } from 'src/app/store/models/iconfig';
+import { Observable } from 'rxjs';
+import { RemoveClock } from 'src/app/store/actions/clock.actions';
 
 @Component({
   selector: 'clock-face',
@@ -10,10 +14,14 @@ export class ClockFaceComponent implements OnInit {
   @Input() timezone: any;
   @Input() currentTime: Date;
 
+  config$: Observable<IConfig>;
+
   city: string = "";
   flag: string = null;
 
-  constructor() { }
+  constructor(private store: Store<IConfig>) { 
+    this.config$ = this.store.select('config');
+  }
 
   ngOnInit() {
   }
@@ -29,5 +37,9 @@ export class ClockFaceComponent implements OnInit {
       }
       this.flag = `https://www.countryflags.io/${this.timezone.country}/flat/24.png`;
     }
+  }
+
+  removeClock(){
+    this.store.dispatch(new RemoveClock(this.timezone.tz));
   }
 }

@@ -10,7 +10,8 @@ export enum ActionTypes {
     AboutClocks = '[Clocks] About Clocks',
     LoadConfig = '[Clocks] Load Config',
     LoadConfigSuccess = '[Clocks] Load Config Success',
-    SaveConfig = '[Clocks] Save Config'
+    SaveConfig = '[Clocks] Save Config',
+    SaveConfigSuccess = '[Clocks] Save Config Success'
 }
 
 export class ZoomInAction implements Action {
@@ -54,6 +55,11 @@ export class SaveConfig implements Action {
     readonly type = ActionTypes.SaveConfig;
 }
 
+export class SaveConfigSuccess implements Action {
+    readonly type = ActionTypes.SaveConfigSuccess;
+    constructor(public payload: IConfig){}
+}
+
 export type ConfigActions = ZoomInAction |
             ZoomOutAction |
             AddClock |
@@ -62,7 +68,6 @@ export type ConfigActions = ZoomInAction |
             LoadConfig |
             LoadConfigSuccess |
             SaveConfig |
+            SaveConfigSuccess |
             AboutClocks;
-
-
 

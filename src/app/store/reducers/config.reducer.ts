@@ -18,7 +18,7 @@ export function configReducers(state:IConfig = DEFAULTCONFIG, action: ConfigActi
             return {
                 ...state,
                 myZones: state.myZones
-                            .filter(p=>p==action.payload)
+                            .filter(p=>p!==action.payload)
             };
 
         case ActionTypes.ToggleDigital:

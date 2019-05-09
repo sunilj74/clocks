@@ -25,33 +25,33 @@ export class TimezoneService {
 
   readConfig(): Observable<IConfig>{
     let config: IConfig = DEFAULTCONFIG;
+    let currentTimezone = this.getCurrentTimeZone();
     let myClocks = localStorage.getItem(STORAGEKEY);
     if(myClocks!==null){
       config = JSON.parse(myClocks) as IConfig;
     }
-    if(!config.myZones){
+    if(!config.myZones.find(p=>p===currentTimezone)){
       config = {
         ...config,
-        myZones: this.getUserTimeZones()
-      }
+        myZones: [
+          ...config.myZones,
+          currentTimezone
+        ]
+      };
     }
     return of(config);
   }
 
-  updateConfig(myConfig: IConfig){
-    localStorage.setItem(STORAGEKEY, JSON.stringify(myConfig));
+  updateConfig(myConfig: IConfig): Observable<IConfig>{
+    if(myConfig!=null){
+      localStorage.setItem(STORAGEKEY, JSON.stringify(myConfig));
+    }
+    return this.readConfig();
   }
 
-  getUserTimeZones(){
-    let userZones = [];
-    userZones = TZMASTER
-        .slice(0, 1)
-        .map(p=>p.tz);
-
+  getCurrentTimeZone(){
     let intlx = new Intl.DateTimeFormat();
     let optionsx = intlx.resolvedOptions();
-    userZones.push(optionsx.timeZone);
-
-    return userZones;
+    return optionsx.timeZone;
   }
 }
