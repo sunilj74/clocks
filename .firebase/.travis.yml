@@ -1,0 +1,15 @@
+fac96e00aedf8d1cdfd9902a790c5e3a79083721
+
+language: node_js
+node_js:
+  - "10.9"
+dist: trusty
+sudo: required
+branches:
+  only:
+  - master
+before_script:
+  - npm install -g @angular/cli
+script:
+- ng test
+- ng build --prod --base-href https://clocks-ng.firebaseapp.com/

@@ -10,6 +10,7 @@ import { StoreModule } from "@ngrx/store";
 import { configReducers } from "../../store/reducers/config.reducer";
 import { EffectsModule } from "@ngrx/effects";
 import { ClockEffects } from "../../store/effects/clock.effects";
+import { InputLookupDirective } from 'src/app/directives/validators/input-lookup.directive';
 
 describe('ClockModalComponent', () => {
   let component: ClockModalComponent;
@@ -17,7 +18,11 @@ describe('ClockModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ClockModalComponent, ClockAddFormComponent],
+      declarations: [
+        ClockModalComponent, 
+        ClockAddFormComponent,
+        InputLookupDirective
+      ],
       imports: [
         ReactiveFormsModule,
         ClocksMaterialModule,
@@ -36,6 +41,7 @@ describe('ClockModalComponent', () => {
           provide: MAT_DIALOG_DATA,
           useValue: {}
         }
+
       ]
     }).compileComponents();
   }));

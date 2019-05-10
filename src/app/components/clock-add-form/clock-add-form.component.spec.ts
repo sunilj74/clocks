@@ -7,6 +7,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { ClockEffects } from '../../store/effects/clock.effects';
 
 import { ClockAddFormComponent } from './clock-add-form.component';
+import { InputLookupDirective } from 'src/app/directives/validators/input-lookup.directive';
 
 describe('ClockAddFormComponent', () => {
   let component: ClockAddFormComponent;
@@ -14,7 +15,10 @@ describe('ClockAddFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClockAddFormComponent ],
+      declarations: [ 
+        ClockAddFormComponent,
+        InputLookupDirective
+      ],
       imports: [
         ClocksMaterialModule,
         ReactiveFormsModule,

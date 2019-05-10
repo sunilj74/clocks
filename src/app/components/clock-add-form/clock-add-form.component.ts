@@ -6,6 +6,7 @@ import { TZMASTER } from 'src/app/services/timezonedata';
 import { Store } from '@ngrx/store';
 import { IConfig } from 'src/app/store/models/iconfig';
 import { AddClock } from 'src/app/store/actions/clock.actions';
+import { lookupValidator } from 'src/app/validators/lookup';
 
 @Component({
   selector: 'app-clock-add-form',
@@ -15,7 +16,7 @@ import { AddClock } from 'src/app/store/actions/clock.actions';
 export class ClockAddFormComponent implements OnInit {
   @Output() close = new EventEmitter<true>();
   filteredCities: Observable<string[]>;
-  tzName = new FormControl('', [Validators.required]);
+  tzName = new FormControl('', [lookupValidator(TZMASTER, 'tz')]);
   tzData: string[];
 
   constructor(private store: Store<IConfig>) { 

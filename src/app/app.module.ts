@@ -21,6 +21,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { ClockEffects } from './store/effects/clock.effects';
 import { ClockAddFormComponent } from './components/clock-add-form/clock-add-form.component';
 import { ClockModalComponent } from './components/clock-modal/clock-modal.component';
+import { InputLookupDirective } from './directives/validators/input-lookup.directive';
+import { UnlessDirective } from './directives/structural/unless.directive';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ClockModalComponent } from './components/clock-modal/clock-modal.compon
     ClockDashComponent,
     AppComponent,
     ClockAddFormComponent,
-    ClockModalComponent
+    ClockModalComponent,
+    InputLookupDirective,
+    UnlessDirective,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

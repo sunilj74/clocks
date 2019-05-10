@@ -1,6 +1,6 @@
 <mat-form-field appearance="standard">
   <mat-label>City/Timezone</mat-label>
-  <input matInput placeholder="city time zone" [matAutocomplete]="auto" [formControl]="tzName">
+  <input matInput placeholder="city time zone" [matAutocomplete]="auto" [formControl]="tzName" required>
   <button matSuffix mat-icon-button class="secondary" (click)="addTimeZone()">
     <i class="material-icons">add_circle</i>
   </button>
@@ -10,4 +10,6 @@
     </mat-option>
   </mat-autocomplete>
   <mat-hint>Enter part of city or timezone name and select from the list</mat-hint>
+  <mat-error *ngIf="tzName.hasError('required')">City is required.</mat-error>
+  <mat-error *ngIf="tzName.hasError('lookup')">City name is not available.</mat-error>
 </mat-form-field>
