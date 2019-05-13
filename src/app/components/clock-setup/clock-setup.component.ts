@@ -14,7 +14,7 @@ import { ClockModalComponent } from '../clock-modal/clock-modal.component';
 })
 export class ClockSetupComponent{
   @Input() config: any;
-  showOptions: boolean = true;
+  showOptions: boolean = false;
   zoomer = "inactive";
   buttons: number = 2;
 

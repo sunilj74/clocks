@@ -18,5 +18,8 @@
     <button mat-mini-fab class="fab-secondary" color="secondary" (click)="toggleIsDigital()">
       <i class="material-icons">{{config?.isDigital?'access_time':'looks_two'}}</i>
     </button>
+    <button mat-mini-fab class="fab-secondary" color="secondary" [routerLink]="['config']">
+      <i class="material-icons">list</i>
+    </button>
   </div>
 </div>

@@ -13,3 +13,10 @@ before_script:
 script:
 - ng test
 - ng build --prod --base-href https://clocks-ng.firebaseapp.com/
+deploy:
+  provider: firebase
+  token:
+    secure: "1/yjhSnA8U6huYlvxRNGU2BVnr646LL-9bL6lA9_TJJRs"
+  local_dir: dist/clocks
+  on:
+    branch: master

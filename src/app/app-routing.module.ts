@@ -6,22 +6,21 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: "",
     component: ClockDashComponent
   },
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
+    path: "config",
+    loadChildren: "./modules/clock-config/clock-config.module#ClockConfigModule"
   },
   {
-    path: '**',
+    path: "**",
     component: PageNotFoundComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {enableTracing: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

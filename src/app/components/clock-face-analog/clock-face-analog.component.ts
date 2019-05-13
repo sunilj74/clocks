@@ -2,6 +2,7 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { IConfig } from 'src/app/store/models/iconfig';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: "clock-face-analog",
@@ -23,10 +24,11 @@ export class ClockFaceAnalogComponent implements OnInit {
     seconds: "rotate(0, 50, 50)"
   };
 
-  constructor(private store: Store<IConfig>) {
+  constructor(private store: Store<IConfig>, private route: ActivatedRoute) {
     this.config$ = this.store.pipe(
         select('config')
     );
+    console.log({activateRoute: this.route});
     this.config$.subscribe(p=>{
       let width = `${100 * p.zoomLevel}px`;
       let height = `${100 * p.zoomLevel}px`;
