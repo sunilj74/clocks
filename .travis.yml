@@ -11,7 +11,9 @@ before_script:
 script:
 - ng test --watch false --browsers ChromeHeadless
 - ng build --prod --base-href https://clocks-ng.firebaseapp.com/
-
+before_deploy:
+- ls
+- ls dist
 deploy:
   provider: firebase
   token:
