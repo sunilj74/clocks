@@ -1,4 +1,3 @@
-#fac96e00aedf8d1cdfd9902a790c5e3a79083721
 language: node_js
 node_js:
   - "10.9"
@@ -15,7 +14,7 @@ script:
 deploy:
   provider: firebase
   token:
-    secure: "1/yjhSnA8U6huYlvxRNGU2BVnr646LL-9bL6lA9_TJJRs"
+    secure: "ga4cwjg4e/tkOicDa8rcrLOY8rXYc15CzPu+P4tQmG4V+d+K1V4LCIg7jDSqsz/5ubGxHpMQ58ocZSxi9vyt1cjx5bPpZ4ZXQHAganxU/8BRgWW/KnqgrtA0kSYmJ2bfW1S/8dpkBsQHKXT0CDv4dsjKkDSG+jxNDYtKdg95eMh9/pW7IZwysF8GVU9bhsKi77KSszgZ2ROS7557XAGcF3BQc0pecNAKCEubiUE4oRPDYj0ix0moadXIMy/RK9jRwJIgZ+Ybtmac3AsrRSeA95PAVlmp/6BE2yfMaiULRk29tkTJH81ISb7coCatiiWxU2FQuRtCPFXABi+FVezfRp9mW0hOQxM5GlmzVbHxgKaHwi0w67y2+HckV8m6B47lUYGO/x9npri52S+n6twSHIshCebaTZ0DxXtZmb8yQO/wwpH48ABQZz7RebxVrRrZsGs85aViWE4beB7jFz5cfGSdRsDeJHmauPfeGbMZ1Y4YFNz2MGg8+NSWXwO2mG1RPfUS6GrI73V2m2OhqX9UrIxhPVXYWojIaCHEkeEaAixf/7fp2E3VK+pZoQErRU5NTf7WLIjArL0saK3dX1IkoBnjtJd8ykwwwRalezHo+tMd6wgNyFbHlGyg9GMw+1Yn6vtecsD+7lqLGiYB2wxOAdZtTPRWfH1AxCBsYRnsiKs="
   local_dir: dist/clocks
   on:
     branch: master
