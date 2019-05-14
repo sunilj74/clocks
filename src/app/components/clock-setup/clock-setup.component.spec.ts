@@ -6,6 +6,7 @@ import { EffectsModule } from "@ngrx/effects";
 import { ClockEffects } from "../../store/effects/clock.effects";
 
 import { ClockSetupComponent } from './clock-setup.component';
+import { RouterModule } from '@angular/router';
 
 describe('ClockSetupComponent', () => {
   let component: ClockSetupComponent;
@@ -16,6 +17,7 @@ describe('ClockSetupComponent', () => {
       declarations: [ClockSetupComponent],
       imports: [
         ClocksMaterialModule,
+        RouterModule.forRoot([]),
         StoreModule.forRoot({
           config: configReducers
         }),

@@ -8,6 +8,7 @@ import { StoreModule } from "@ngrx/store";
 import { configReducers } from "../../store/reducers/config.reducer";
 import { EffectsModule } from "@ngrx/effects";
 import { ClockEffects } from "../../store/effects/clock.effects";
+import { RouterModule } from '@angular/router';
 
 describe('ClockFaceComponent', () => {
   let component: ClockFaceComponent;
@@ -22,6 +23,7 @@ describe('ClockFaceComponent', () => {
       ],
       imports: [
         ClocksMaterialModule,
+        RouterModule.forRoot([]),
         StoreModule.forRoot({
           config: configReducers
         }),

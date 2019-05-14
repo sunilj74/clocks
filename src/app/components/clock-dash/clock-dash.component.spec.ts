@@ -11,6 +11,7 @@ import { ClockFaceComponent } from '../clock-face/clock-face.component';
 import { ClockSetupComponent } from '../clock-setup/clock-setup.component';
 import { ClockFaceAnalogComponent } from '../clock-face-analog/clock-face-analog.component';
 import { ClockFaceDigitalComponent } from '../clock-face-digital/clock-face-digital.component';
+import { RouterModule } from '@angular/router';
 
 describe('ClockDashComponent', () => {
   let component: ClockDashComponent;
@@ -27,6 +28,7 @@ describe('ClockDashComponent', () => {
       ],
       imports: [
         ClocksMaterialModule,
+        RouterModule.forRoot([]),
         StoreModule.forRoot({
           config: configReducers
         }),
