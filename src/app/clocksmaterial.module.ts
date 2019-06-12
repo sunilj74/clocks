@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -15,9 +15,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   imports: [
-    BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatRadioModule,
     MatToolbarModule,
     MatCardModule,
     MatGridListModule,
@@ -31,9 +31,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     FlexLayoutModule
   ],
   exports: [
-    BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatRadioModule,
     MatCardModule,
     MatToolbarModule,
     MatGridListModule,

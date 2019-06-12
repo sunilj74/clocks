@@ -20,6 +20,7 @@ export function lookupValidator(data: any[] , name: string = ""): ValidatorFn {
 
             });
 
+
             if(index==-1){
                 return {
                     lookup: true

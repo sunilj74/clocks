@@ -1,0 +1,9 @@
+.config-card {
+    width: 600px;
+}
+
+.config-form > * {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
