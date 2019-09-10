@@ -1,0 +1,13 @@
+<svg version="1.1"
+     baseProfile="full"
+     width="220" height="220"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <circle cx="110" cy="110" r="100" stroke="black" fill="transparent" />
+    <path id="circlePath" stroke="green" fill="transparent" d="M 40 110 a 70 70 0 1 0 140 0 a 70 70 0 1 0 -140 0" />
+    <text width="440">
+        <textPath href="#circlePath">
+        1 2 3
+        </textPath>
+    </text>
+</svg>

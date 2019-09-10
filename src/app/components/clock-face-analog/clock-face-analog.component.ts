@@ -33,7 +33,7 @@ export class ClockFaceAnalogComponent implements OnInit {
       let width = `${100 * p.zoomLevel}px`;
       let height = `${100 * p.zoomLevel}px`;
       this.analogStyle = {
-        background: "url(assets/images/clocks/easy.svg)",
+        background: "url(assets/images/clocks/numberface.svg)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% 100%",
         width: width,
