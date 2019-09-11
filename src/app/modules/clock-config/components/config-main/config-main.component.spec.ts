@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConfigMainComponent } from './config-main.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ClocksMaterialModule } from 'src/app/clocksmaterial.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ConfigMainComponent', () => {
   let component: ConfigMainComponent;
@@ -8,7 +11,14 @@ describe('ConfigMainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConfigMainComponent ]
+      declarations: [ 
+        ConfigMainComponent 
+      ],
+      imports: [
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        ClocksMaterialModule
+      ]
     })
     .compileComponents();
   }));

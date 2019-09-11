@@ -8,6 +8,7 @@ import { ClockEffects } from '../../store/effects/clock.effects';
 
 import { ClockAddFormComponent } from './clock-add-form.component';
 import { InputLookupDirective } from 'src/app/directives/validators/input-lookup.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ClockAddFormComponent', () => {
   let component: ClockAddFormComponent;
@@ -21,6 +22,7 @@ describe('ClockAddFormComponent', () => {
       ],
       imports: [
         ClocksMaterialModule,
+        BrowserAnimationsModule,
         ReactiveFormsModule,
         StoreModule.forRoot({
           config: configReducers

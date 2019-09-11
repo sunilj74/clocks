@@ -7,6 +7,7 @@ import { ClockEffects } from "../../store/effects/clock.effects";
 
 import { ClockSetupComponent } from './clock-setup.component';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ClockSetupComponent', () => {
   let component: ClockSetupComponent;
@@ -17,6 +18,7 @@ describe('ClockSetupComponent', () => {
       declarations: [ClockSetupComponent],
       imports: [
         ClocksMaterialModule,
+        BrowserAnimationsModule,
         RouterModule.forRoot([]),
         StoreModule.forRoot({
           config: configReducers

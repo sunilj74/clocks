@@ -11,6 +11,7 @@ import { configReducers } from "../../store/reducers/config.reducer";
 import { EffectsModule } from "@ngrx/effects";
 import { ClockEffects } from "../../store/effects/clock.effects";
 import { InputLookupDirective } from 'src/app/directives/validators/input-lookup.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ClockModalComponent', () => {
   let component: ClockModalComponent;
@@ -25,6 +26,7 @@ describe('ClockModalComponent', () => {
       ],
       imports: [
         ReactiveFormsModule,
+        BrowserAnimationsModule,
         ClocksMaterialModule,
         ReactiveFormsModule,
         StoreModule.forRoot({

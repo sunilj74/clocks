@@ -12,6 +12,7 @@ import { ClockSetupComponent } from '../clock-setup/clock-setup.component';
 import { ClockFaceAnalogComponent } from '../clock-face-analog/clock-face-analog.component';
 import { ClockFaceDigitalComponent } from '../clock-face-digital/clock-face-digital.component';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ClockDashComponent', () => {
   let component: ClockDashComponent;
@@ -19,8 +20,8 @@ describe('ClockDashComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
-        ClockDashComponent, 
+      declarations: [
+        ClockDashComponent,
         ClockFaceComponent,
         ClockSetupComponent,
         ClockFaceAnalogComponent,
@@ -28,16 +29,14 @@ describe('ClockDashComponent', () => {
       ],
       imports: [
         ClocksMaterialModule,
+        BrowserAnimationsModule,
         RouterModule.forRoot([]),
         StoreModule.forRoot({
           config: configReducers
         }),
-        EffectsModule.forRoot([
-          ClockEffects
-        ])
+        EffectsModule.forRoot([ClockEffects])
       ]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
