@@ -12,17 +12,17 @@
 	 </defs>
 
     <circle cx="110" cy="110" r="100" stroke="black" stroke-width="2" fill="url(#silver)" />
-	<text x='195' y='110' transform='rotate(90,195,110)'>3</text>
-	<text x='183.61' y='152.5' transform='rotate(120,183.61,152.5)'>4</text>
-	<text x='152.5' y='183.61' transform='rotate(150,152.5,183.61)'>5</text>
-	<text x='110' y='195' transform='rotate(180,110,195)'>6</text>
-	<text x='67.5' y='183.61' transform='rotate(210,67.5,183.61)'>7</text>
-	<text x='36.39' y='152.5' transform='rotate(240,36.39,152.5)'>8</text>
-	<text x='25' y='110' transform='rotate(270,25,110)'>9</text>
-	<text x='32.96' y='74.08' transform='rotate(300,32.96,74.08)'>10</text>
-	<text x='61.25' y='40.37' transform='rotate(330,61.25,40.37)'>11</text>
-	<text x='102.59' y='25.32' transform='rotate(0,102.59,25.32)'>12</text>
-	<text x='152.5' y='36.39' transform='rotate(30,152.5,36.39)'>1</text>
-	<text x='183.61' y='67.5' transform='rotate(60,183.61,67.5)'>2</text>
+	<text style='text-anchor: middle;' x='195' y='110' transform='rotate(90,195,110)'>3</text>
+	<text style='text-anchor: middle;' x='183.61' y='152.5' transform='rotate(120,183.61,152.5)'>4</text>
+	<text style='text-anchor: middle;' x='152.5' y='183.61' transform='rotate(150,152.5,183.61)'>5</text>
+	<text style='text-anchor: middle;' x='110' y='195' transform='rotate(180,110,195)'>6</text>
+	<text style='text-anchor: middle;' x='67.5' y='183.61' transform='rotate(210,67.5,183.61)'>7</text>
+	<text style='text-anchor: middle;' x='36.39' y='152.5' transform='rotate(240,36.39,152.5)'>8</text>
+	<text style='text-anchor: middle;' x='25' y='110' transform='rotate(270,25,110)'>9</text>
+	<text style='text-anchor: middle;' x='36.39' y='67.5' transform='rotate(300,36.39,67.5)'>10</text>
+	<text style='text-anchor: middle;' x='67.5' y='36.39' transform='rotate(330,67.5,36.39)'>11</text>
+	<text style='text-anchor: middle;' x='110' y='25' transform='rotate(0,110,25)'>12</text>
+	<text style='text-anchor: middle;' x='152.5' y='36.39' transform='rotate(30,152.5,36.39)'>1</text>
+	<text style='text-anchor: middle;' x='183.61' y='67.5' transform='rotate(60,183.61,67.5)'>2</text>
 
 </svg>

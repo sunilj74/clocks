@@ -1,0 +1,28 @@
+<svg version="1.1"
+     baseProfile="full"
+     width="220" height="220"
+     xmlns="http://www.w3.org/2000/svg">
+	 <defs>
+        <linearGradient id="silver" x1="50%" y1="0%" x2="50%" y2="100%" >    
+            <stop offset="0%" stop-color="#c0c0c0">
+            </stop>
+            <stop offset="100%" stop-color="#e0e0e0">
+            </stop>
+        </linearGradient> 
+	 </defs>
+
+    <rect x="10" y="10" width="200" height="200" rx="50" ry="50" stroke="black" stroke-width="2" fill="url(#silver)" />
+<text style='text-anchor: middle;' x='195' y='110' transform='rotate(90,195,110)'>3</text>
+<text style='text-anchor: middle;' x='192.27' y='157.5' transform='rotate(120,192.27,157.5)'>4</text>
+<text style='text-anchor: middle;' x='157.5' y='192.27' transform='rotate(150,157.5,192.27)'>5</text>
+<text style='text-anchor: middle;' x='110' y='195' transform='rotate(180,110,195)'>6</text>
+<text style='text-anchor: middle;' x='62.5' y='192.27' transform='rotate(210,62.5,192.27)'>7</text>
+<text style='text-anchor: middle;' x='27.73' y='157.5' transform='rotate(240,27.73,157.5)'>8</text>
+<text style='text-anchor: middle;' x='25' y='110' transform='rotate(270,25,110)'>9</text>
+<text style='text-anchor: middle;' x='27.73' y='62.5' transform='rotate(300,27.73,62.5)'>10</text>
+<text style='text-anchor: middle;' x='62.5' y='27.73' transform='rotate(330,62.5,27.73)'>11</text>
+<text style='text-anchor: middle;' x='110' y='25' transform='rotate(0,110,25)'>12</text>
+<text style='text-anchor: middle;' x='157.5' y='27.73' transform='rotate(30,157.5,27.73)'>1</text>
+<text style='text-anchor: middle;' x='192.27' y='62.5' transform='rotate(60,192.27,62.5)'>2</text>
+
+</svg>
