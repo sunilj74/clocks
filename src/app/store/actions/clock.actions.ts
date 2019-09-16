@@ -8,6 +8,7 @@ export enum ActionTypes {
     RemoveClock = '[Clocks] Remove Clock',
     ToggleDigital = '[Clocks] Toggle Digital',
     AboutClocks = '[Clocks] About Clocks',
+    UpdateConfig = '[Clock] Update Config',
     LoadConfig = '[Clocks] Load Config',
     LoadConfigSuccess = '[Clocks] Load Config Success',
     SaveConfig = '[Clocks] Save Config',
@@ -42,6 +43,11 @@ export class AboutClocks implements Action {
     readonly type = ActionTypes.AboutClocks;
 }
 
+export class UpdateConfig implements Action {
+    readonly type = ActionTypes.UpdateConfig;
+    constructor(public payload: any){}
+}
+
 export class LoadConfig implements Action {
     readonly type = ActionTypes.LoadConfig;
 }
@@ -65,6 +71,7 @@ export type ConfigActions = ZoomInAction |
             AddClock |
             RemoveClock |
             ToggleDigital |
+            UpdateConfig |
             LoadConfig |
             LoadConfigSuccess |
             SaveConfig |

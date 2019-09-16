@@ -28,7 +28,12 @@ export class TimezoneService {
     let currentTimezone = this.getCurrentTimeZone();
     let myClocks = localStorage.getItem(STORAGEKEY);
     if(myClocks!==null){
-      config = JSON.parse(myClocks) as IConfig;
+      let tmpConfig = JSON.parse(myClocks);
+      for(let prop in tmpConfig){
+        if(config.hasOwnProperty(prop)){
+          config[prop] = tmpConfig[prop];
+        }
+      }
     }
     if(config.myZones==null){
       config.myZones=[];

@@ -2,6 +2,7 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { IConfig } from 'src/app/store/models/iconfig';
 import { Store, select } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: "clock-face-digital",
@@ -13,19 +14,29 @@ export class ClockFaceDigitalComponent implements OnInit, OnDestroy {
   @Input() timezone: any;
   private subscription: Subscription = new Subscription();
   digitalStyle: any;
+  ampmStyle: any;
   config$: Observable<IConfig>;
 
-  constructor(private store: Store<IConfig>) {
+  constructor(
+    private store: Store<IConfig>,
+    private sanitizer: DomSanitizer
+  ) {
     this.config$ = this.store.pipe(
       select('config')
     );
     this.subscription.add(
       this.config$.subscribe(p=>{
-        this.digitalStyle = {
-          fontSize: `${(40 + (12*p.zoomLevel))}px`,
-          padding: '30px 30px 30px 30px',
-          border: "3px solid slategray"
+        this.ampmStyle = {
+          color: p.digitalAMPMStroke
         };
+        this.digitalStyle = this.sanitizer.bypassSecurityTrustStyle(`
+          font-size: ${40 + 12 * p.zoomLevel}px;
+          width: ${160 + 80 * p.zoomLevel}px;
+          border-color: ${p.digitalBorder};
+          background: linear-gradient(45deg, ${p.digitalBackground}, ${p.digitalGradient});
+          color: ${p.digitalTextStroke}
+        `);
+        console.log("style", this.digitalStyle)
       })
     );
   }

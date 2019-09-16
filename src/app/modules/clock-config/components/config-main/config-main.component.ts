@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { lookupValidator } from 'src/app/validators/lookup';
 import { TZMASTER } from 'src/app/services/timezonedata';
 import { startWith, map } from 'rxjs/operators';
+import { Store, select } from '@ngrx/store';
+import { IConfig, DEFAULTCONFIG } from 'src/app/store/models/iconfig';
+import { UpdateConfig } from 'src/app/store/actions/clock.actions';
 
 @Component({
   selector: "app-config-main",
@@ -12,43 +15,64 @@ import { startWith, map } from 'rxjs/operators';
 })
 export class ConfigMainComponent implements OnInit {
   configForm = new FormGroup({
-    isDigital: new FormControl(false),
-    zoomLevel: new FormControl("S"),
-    zone1: new FormControl("", [lookupValidator(TZMASTER, "tz")]),
-    zone2: new FormControl("", [lookupValidator(TZMASTER, "tz")]),
-    zone3: new FormControl("", [lookupValidator(TZMASTER, "tz")]),
-    zone4: new FormControl("", [lookupValidator(TZMASTER, "tz")]),
-    zone5: new FormControl("", [lookupValidator(TZMASTER, "tz")]),
-    zone6: new FormControl("", [lookupValidator(TZMASTER, "tz")])
+    format: new FormControl(),
+    textStroke: new FormControl(),
+    stroke: new FormControl(),
+    fillOne: new FormControl(),
+    fillTwo: new FormControl(),
+    round: new FormControl(),
+    hourStroke: new FormControl(),
+    minuteStroke: new FormControl(),
+    secondStroke: new FormControl(),
+    digitalBorder: new FormControl(),
+    digitalBackground: new FormControl(),
+    digitalGradient: new FormControl(),
+    digitalTextStroke: new FormControl(),
+    digitalAMPMStroke: new FormControl()
   });
 
   filteredCities: Observable<string[]>;
   tzData: string[];
+  config$: Observable<IConfig>;
+  config: IConfig = DEFAULTCONFIG;
 
-  constructor() {}
-
+  constructor(private store: Store<IConfig>) {
+    this.config$ = this.store.pipe(
+      select('config')
+    );
+    this.updateDataIntoForm();
+    this.config$.subscribe(p=>{
+      this.config = p;
+      this.updateDataIntoForm();
+    });
+  }
 
   ngOnInit() {
     this.tzData = TZMASTER.map(p => p.tz);
-    this.filteredCities = this.configForm.controls.zone1
-      .valueChanges
-      .pipe(
-        startWith(''),
-        map(p => {
-          if (p==null ||p == "") return [];
-          let filterValue = p.toLowerCase()
-          return this.tzData.filter(q => q.toLowerCase().indexOf(filterValue) != -1);
-        })
-      );
   }
 
-  resetConfigForm(){
-    this.configForm.markAsPristine();
-    this.configForm.markAsUntouched();
-    this.configForm.updateValueAndValidity();
+  updateDataIntoForm(){
+    let values = {
+      format: this.config.format,
+      textStroke: this.config.textStroke,
+      stroke: this.config.stroke,
+      fillOne: this.config.fillOne,
+      fillTwo: this.config.fillTwo,
+      round: this.config.round,
+      hourStroke: this.config.hourStroke,
+      minuteStroke: this.config.minuteStroke,
+      secondStroke: this.config.secondStroke,
+      digitalBorder: this.config.digitalBorder,
+      digitalBackground: this.config.digitalBackground,
+      digitalGradient: this.config.digitalGradient,
+      digitalTextStroke: this.config.digitalTextStroke,
+      digitalAMPMStroke: this.config.digitalAMPMStroke
+    };
+
+    this.configForm.setValue(values);
   }
 
   submitConfigForm(){
-    console.log("submit",this.configForm.value)
+    this.store.dispatch(new UpdateConfig(this.configForm.value));
   }
 }

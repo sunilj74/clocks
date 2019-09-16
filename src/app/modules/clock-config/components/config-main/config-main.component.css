@@ -1,5 +1,12 @@
+.config-container {
+    margin: auto;
+    width: 900px;
+    max-width: 100%;
+    padding: 20px;
+}
+
 .config-card {
-    width: 600px;
+    font-family: 'Concert One';
 }
 
 .config-form > * {
@@ -7,3 +14,81 @@
     padding-bottom: 10px;
 }
 
+.config-actions {
+    padding-top: 10px;
+}
+
+.config-header {
+    padding: 10px;
+    background-color: black;
+    color: darkgray;
+    margin-bottom: 20px;
+}
+
+.config-title {
+    font-family: 'Poiret One';
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.config-radio {
+    padding: 10px 20px 10px 0px;
+    font-family: 'PT Sans';
+}
+
+.config-checkbox {
+    font-family: 'PT Sans';
+}
+
+.config-button {
+    font-family: 'Poiret One';
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.config-table {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.config-cell {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.config-gap {
+    width: 20px;
+}
+
+.config-heading {
+    font-family: "Poiret One";
+    font-weight: bold;
+    font-size: 22px;
+    color: #505050;
+    padding-bottom: 10px;
+}
+
+.config-color {
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.config-color-text {
+    font-family: "PT Sans";
+    padding: 4px 8px;
+    margin-right: 20px;
+}
+
+.config-border {
+    border: 1px solid darkslategray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.mt {
+    margin-top: 20px;
+}

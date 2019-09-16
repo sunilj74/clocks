@@ -36,6 +36,7 @@ export class  ClockEffects {
                     ActionTypes.AddClock, 
                     ActionTypes.RemoveClock, 
                     ActionTypes.ToggleDigital, 
+                    ActionTypes.UpdateConfig,
                     ActionTypes.ZoomIn, 
                     ActionTypes.ZoomOut
                 ),

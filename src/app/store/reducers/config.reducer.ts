@@ -42,6 +42,27 @@ export function configReducers(state:IConfig = DEFAULTCONFIG, action: ConfigActi
         case ActionTypes.LoadConfigSuccess:
             return action.payload;
 
+        case ActionTypes.UpdateConfig:
+            if(action.payload!=null){
+                let values = action.payload;
+                return {
+                    ...state,
+                    format: values.format,
+                    textStroke: values.textStroke,
+                    stroke: values.stroke,
+                    fillOne: values.fillOne,
+                    fillTwo: values.fillTwo,
+                    round: values.round,
+                    hourStroke: values.hourStroke,
+                    minuteStroke: values.minuteStroke,
+                    secondStroke: values.secondStroke,
+                    digitalBorder: values.digitalBorder,
+                    digitalBackground: values.digitalBackground,
+                    digitalTextStroke: values.digitalTextStroke,
+                    digitalAMPMStroke: values.digitalAMPMStroke
+                };
+            }
+
         default:
             return state;
     }

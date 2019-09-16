@@ -1,13 +1,14 @@
-<div [ngStyle]="analogStyle">
+<div class="analog-clock-face" [style]="getAnalogStyle()">
     <svg height="100%" width="100%" viewBox="0 0 100 100">
         <style>
-            .ampm { font-size: 10px }
+            .ampm { font-size: 8px; font-weight: bold; font-family: 'Concert One'; }
         </style>
         <g>
-            <text x="40" y="30" class="ampm">{{ampm}}</text>
-            <line x1="50" y1="50" x2="50" y2="35" [attr.transform]="rotate.hours" style="stroke-width: 2px; stroke: #43464B;" id="hourhand"></line>
-            <line x1="50" y1="50" x2="50" y2="25" [attr.transform]="rotate.minutes" style="stroke-width: 2px; stroke: #43464B;" id="minutehand"></line>
-            <line x1="50" y1="50" x2="50" y2="20" [attr.transform]="rotate.seconds" style="stroke-width: 1px; stroke: #800000;" id="secondhand"></line>
+            <text x="45" y="26" class="ampm">{{ampm}}</text>
+            <line x1="50" y1="50" x2="50" y2="35" [attr.transform]="rotate.hours" stroke-width="1px" [attr.stroke]="hourStroke" id="hourhand"></line>
+            <line x1="50" y1="50" x2="50" y2="25" [attr.transform]="rotate.minutes" stroke-width="1px" [attr.stroke]="minuteStroke" id="minutehand"></line>
+            <line x1="50" y1="50" x2="50" y2="20" [attr.transform]="rotate.seconds" stroke-width="1px" [attr.stroke]="secondStroke" id="secondhand"></line>
+            <circle cx="50" cy="50" r="1" [attr.stroke]="secondStroke" [attr.fill]="secondStroke"></circle>
         </g>
     </svg>
 </div>
